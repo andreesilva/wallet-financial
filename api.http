@@ -3,8 +3,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-   "name": "silvia",
-   "email": "silvia@gmail.com",
+   "name": "marcos",
+   "email": "marcos@gmail.com",
    "password": "123456"
 }
 
@@ -12,21 +12,26 @@ Content-Type: application/json
 
 
 ###  Login
+# @name loginUser
 POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-   "email": "silvia@gmail.com",
+   "email": "marcos@gmail.com",
    "password": "123456"
 }
+
+###
+@token = {{ loginUser.response.body.access_token }} 
+
 
 ### Cadastro Partner
 POST http://localhost:3000/partners
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6InNpbHZpYSIsImVtYWlsIjoic2lsdmlhQGdtYWlsLmNvbSIsInJvbGVzIjoiVVNFUiIsImNyZWF0ZWRBdCI6IjIwMjQtMDYtMjVUMDE6NTk6NTYuODMzWiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0yNVQwMTo1OTo1Ni44MzNaIiwiaWF0IjoxNzE5MjgwODQyLCJleHAiOjE3MTkzODA4NDJ9.gc-XgBa5CWDR_tk7KRAAoR1S1IqRT20VIum2LxloXac
+Authorization: Bearer {{token}}
 
 {
-   "name": "Silvia Madalena e Silva"
+   "name": "Marcos Lima da Silva"
    
 }
 
@@ -35,19 +40,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6I
 ### Cadastro conta
 POST http://localhost:3000/accounts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6InNpbHZpYSIsImVtYWlsIjoic2lsdmlhQGdtYWlsLmNvbSIsInJvbGVzIjoiVVNFUiIsImNyZWF0ZWRBdCI6IjIwMjQtMDYtMjVUMDE6NTk6NTYuODMzWiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0yNVQwMTo1OTo1Ni44MzNaIiwiaWF0IjoxNzE5MjgwODQyLCJleHAiOjE3MTkzODA4NDJ9.gc-XgBa5CWDR_tk7KRAAoR1S1IqRT20VIum2LxloXac
+Authorization: Bearer {{token}}
 
 {
-   "balance": 2000
+   "balance": 1000
    
 }
 
 
 
 ###
-PATCH  http://localhost:3000/transactions/transfer/2
+PATCH  http://localhost:3000/transactions/transfer/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6InNpbHZpYSIsImVtYWlsIjoic2lsdmlhQGdtYWlsLmNvbSIsInJvbGVzIjoiVVNFUiIsImNyZWF0ZWRBdCI6IjIwMjQtMDYtMjVUMDE6NTk6NTYuODMzWiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0yNVQwMTo1OTo1Ni44MzNaIiwiaWF0IjoxNzE5MjgwODQyLCJleHAiOjE3MTkzODA4NDJ9.gc-XgBa5CWDR_tk7KRAAoR1S1IqRT20VIum2LxloXac
+Authorization: Bearer {{token}}
 
 {
    "balance":100

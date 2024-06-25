@@ -54,4 +54,6 @@ model Account {
   partnerId Int
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt
+
+  @@unique([partnerId])
 }
