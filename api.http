@@ -1,4 +1,4 @@
-### Usuário comum
+### Criando usuário
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -11,8 +11,7 @@ Content-Type: application/json
 
 
 
-###Login
-
+###  Login
 POST http://localhost:3000/auth/login
 Content-Type: application/json
 
@@ -31,11 +30,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6I
    
 }
 
-###
-//GET http://localhost:3000/partners
-//Content-Type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6Im1hcmNvcyIsImVtYWlsIjoibWFyY29zQGdtYWlsZ21haWwuY29tIiwicm9sZXMiOiJVU0VSIiwiY3JlYXRlZEF0IjoiMjAyNC0wNi0yNFQwNjoyNjo0OS4zNTJaIiwidXBkYXRlQXQiOiIyMDI0LTA2LTI0VDA2OjI2OjQ5LjM1MloiLCJpYXQiOjE3MTkyMTEzNzcsImV4cCI6MTcxOTMxMTM3N30.C4kqU4S4qiZY7yM3ETPBtUCfC9MAbV0ro4L-SwCsxTE
-
 
 
 ### Cadastro conta
@@ -48,15 +42,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6I
    
 }
 
-###
-//GET http://localhost:3000/transactions/2
-//Content-Type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6Im1hcmNvcyIsImVtYWlsIjoibWFyY29zQGdtYWlsZ21haWwuY29tIiwicm9sZXMiOiJVU0VSIiwiY3JlYXRlZEF0IjoiMjAyNC0wNi0yNFQwNjoyNjo0OS4zNTJaIiwidXBkYXRlQXQiOiIyMDI0LTA2LTI0VDA2OjI2OjQ5LjM1MloiLCJpYXQiOjE3MTkyMTEzNzcsImV4cCI6MTcxOTMxMTM3N30.C4kqU4S4qiZY7yM3ETPBtUCfC9MAbV0ro4L-SwCsxTE
 
-###
-//GET http://localhost:3000/transactions
-//Content-Type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjcsIm5hbWUiOiJNYXJpbyIsImVtYWlsIjoibWFydHVsaW9pb0BnbWFpbGZmZmZmLmNvbSIsInJvbGVzIjoiUEFSVE5FUiIsImNyZWF0ZWRBdCI6IjIwMjQtMDYtMjNUMDM6MDA6MjkuMzYyWiIsInVwZGF0ZUF0IjoiMjAyNC0wNi0yM1QwMzowMDoyOS4zNjJaIiwiaWF0IjoxNzE5MTExNzQ1LCJleHAiOjE3MTkyMTE3NDV9.o9KeMEQwDO8MX4-ZrqQ6e7tU_4PIurG_Nyi3IFdZDug
 
 ###
 PATCH  http://localhost:3000/transactions/transfer/2
