@@ -10,17 +10,19 @@ import {
 import { TransactionsService } from './transactions.service';
 import { UpdateTransactionDto } from './dto/update-transaction.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { ApiTags } from '@nestjs/swagger';
 
 @UseGuards(AuthGuard)
 @Controller('transactions')
 export class TransactionsController {
   constructor(private readonly transactionsService: TransactionsService) {}
 
+  @ApiTags('Transactions')
   @Get(':partnerId')
   findOne(@Param('partnerId') partnerId: number) {
     return this.transactionsService.findOne(partnerId);
   }
-
+  @ApiTags('Transactions')
   @Patch('transfer/:id')
   transfer(
     @Param('id') id: string,
