@@ -14,7 +14,7 @@ export class PartnersController {
   create(@Body() createPartnerDto: CreatePartnerDto, @Req() req: any) {
     return this.partnersService.create({
       ...createPartnerDto,
-      userId: req.user.id,
+      userId: req.user,
     });
   }
 }

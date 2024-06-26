@@ -18,11 +18,15 @@ export class AccountsService {
     });
   }
 
+  /*
   findAll() {
     return `This action returns all accounts`;
   }
+  /*
 
+  /*
   findOne(id: number) {
     return `This action returns a #${id} account`;
   }
+  */
 }

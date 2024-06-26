@@ -29,7 +29,7 @@ export class TransactionsController {
     @Body() updateTransactionDto: UpdateTransactionDto,
     @Req() req: any,
   ) {
-    const userId = req.user.id;
+    const userId = req.user;
     return this.transactionsService.transfer(+id, updateTransactionDto, userId);
   }
 }

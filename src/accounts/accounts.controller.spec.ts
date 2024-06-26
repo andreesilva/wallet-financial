@@ -2,12 +2,13 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AccountsController } from './accounts.controller';
 import { AccountsService } from './accounts.service';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { CreateAccountDto } from './dto/create-account.dto';
 
 describe('AccountsController', () => {
   let controller: AccountsController;
 
   const mockAccountsService = {
-    findOne: jest.fn(),
+    create: jest.fn(),
   };
 
   beforeEach(async () => {
@@ -30,14 +31,13 @@ describe('AccountsController', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
-
-  it('findOne', async () => {
-    const partnerDto = {
-      name: 'marcelo',
+  it('create', async () => {
+    const accountDto: CreateAccountDto = {
+      balance: 100,
     };
-    await controller.findOne('1');
+    await controller.create(accountDto);
 
-    expect(mockAccountsService.findOne).toHaveBeenCalledTimes(1);
-    expect(mockAccountsService.findOne).toHaveBeenCalledWith(partnerDto);
+    expect(mockAccountsService.create).toHaveBeenCalledTimes(1);
+    expect(mockAccountsService.create).toHaveBeenCalledWith(accountDto);
   });
 });

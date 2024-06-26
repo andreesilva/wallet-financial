@@ -1,9 +1,7 @@
 import {
   Controller,
-  Get,
   Post,
   Body,
-  Param,
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
@@ -25,15 +23,18 @@ export class AccountsController {
     return this.accountsService.create(createAccountDto);
   }
 
+  /*
   @ApiTags('Accounts')
   @Get()
   findAll() {
     return this.accountsService.findAll();
   }
-
+  */
+  /*
   @ApiTags('Accounts')
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.accountsService.findOne(+id);
   }
+  */
 }

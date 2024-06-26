@@ -1,6 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PartnersController } from './partners.controller';
 import { PartnersService } from './partners.service';
+import { AuthGuard } from 'src/auth/auth.guard';
+import { CreatePartnerDto } from './dto/create-partner.dto';
 
 describe('PartnersController', () => {
   let controller: PartnersController;
@@ -13,7 +15,10 @@ describe('PartnersController', () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [PartnersController],
       providers: [{ provide: PartnersService, useValue: mockPartnersService }],
-    }).compile();
+    })
+      .overrideGuard(AuthGuard)
+      .useValue({ canActivate: jest.fn(() => true) })
+      .compile();
 
     controller = module.get<PartnersController>(PartnersController);
   });
@@ -27,10 +32,12 @@ describe('PartnersController', () => {
   });
 
   it('create', async () => {
-    const partnerDto = {
+    const partnerDto: CreatePartnerDto = {
       name: 'marcelo',
     };
-    await controller.create(partnerDto, { user: { id: 1 } });
+    // const userId = 1;
+
+    await controller.create(partnerDto, { userId: { id: 1 } });
 
     expect(mockPartnersService.create).toHaveBeenCalledTimes(1);
     expect(mockPartnersService.create).toHaveBeenCalledWith(partnerDto);
